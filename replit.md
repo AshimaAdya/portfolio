@@ -1,44 +1,50 @@
-# [Project name]
+# Ashima Adya — Portfolio
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A personal portfolio website for Ashima Adya, Senior Software Engineer specializing in Backend Engineering, Data Engineering, and Distributed Systems.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- `pnpm --filter @workspace/portfolio run dev` — run the portfolio (port assigned by workflow)
+- `pnpm --filter @workspace/portfolio run typecheck` — typecheck the frontend
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- React 19 + Vite 7
+- Tailwind CSS v4
+- Framer Motion for animations
+- react-icons/si for tech stack icons
+- wouter for routing
+- No backend — purely frontend
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/portfolio/src/App.tsx` — router and layout shell
+- `artifacts/portfolio/src/index.css` — theme variables (dark navy / electric cyan palette)
+- `artifacts/portfolio/src/components/sections/` — one file per section (Hero, Impact, Experience, TechStack, Education, Contact)
+- `artifacts/portfolio/src/components/ui/` — shared UI components (AnimatedCounter, SectionHeading, etc.)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Single-page scroll portfolio — no routing to sub-pages, all sections on `/`
+- Framer Motion `whileInView` + `viewport={{ once: true }}` for scroll-triggered animations
+- Animated counters (`AnimatedCounter`) count up when Impact section scrolls into view
+- Dark theme enforced in `:root` CSS variables — no light mode toggle needed for a portfolio
+- `react-icons/si` icons: `SiJava` and `SiMicrosoftazure` do NOT exist in v5.x — use `null` (text fallback) for Java and Azure/Cosmos DB
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Single-page portfolio with sections: Hero · Impact Metrics · Experience Timeline · Tech Stack · Education & Certifications · Contact
 
 ## User preferences
 
-_Populate as you build — explicit user instructions worth remembering across sessions._
+_Populate as you build._
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- `react-icons/si` v5.x does NOT export `SiJava` or `SiMicrosoftazure` — both are absent from the package. Use `null` icon and the text-initial fallback for those.
+- Framer Motion `transition.type` must be typed `as const` (e.g. `"spring" as const`) inside variant objects to satisfy TS strict mode.
+- Always run `pnpm --filter @workspace/portfolio run typecheck` after editing component files.
 
 ## Pointers
 

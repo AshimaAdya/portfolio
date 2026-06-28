@@ -1,0 +1,2 @@
+- [react-icons/si missing icons](react-icons-si-missing.md) — SiJava and SiMicrosoftazure do not exist in react-icons v5.x; use null + text fallback
+- [Framer Motion variant typing](framer-motion-variants-typing.md) — transition.type must be "spring" as const inside variant objects to satisfy TS strict mode
