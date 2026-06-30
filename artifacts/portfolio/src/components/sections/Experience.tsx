@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Calendar, MapPin, Building2, Terminal } from 'lucide-react';
+import { Building2, MapPin } from 'lucide-react';
 
 const experiences = [
   {
@@ -46,51 +46,53 @@ const experiences = [
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 relative">
+    <section id="experience" className="py-24 bg-card">
       <div className="container px-6 mx-auto max-w-4xl">
         <SectionHeading 
-          title="Engineering Timeline" 
+          title="Experience" 
           subtitle="A track record of building and scaling distributed systems."
         />
 
-        <div className="space-y-16 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-primary/50 before:via-border before:to-transparent">
+        <div className="space-y-12 relative before:absolute before:inset-0 before:ml-4 before:h-full before:w-px before:bg-border md:before:ml-[8.5rem]">
           {experiences.map((exp, index) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.6 }}
-              className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+              transition={{ duration: 0.5 }}
+              className="relative flex flex-col md:flex-row md:gap-8 items-start pl-10 md:pl-0"
             >
               {/* Timeline dot */}
-              <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-background bg-primary absolute left-0 md:left-1/2 -translate-x-1/2 shrink-0 z-10 shadow-[0_0_15px_rgba(0,210,255,0.4)]">
-                <Terminal className="w-4 h-4 text-primary-foreground" />
+              <div className="absolute left-4 md:left-[8.5rem] -translate-x-1/2 top-1.5 w-3 h-3 rounded-full bg-background border-2 border-primary z-10" />
+
+              {/* Period - Left side on desktop */}
+              <div className="md:w-32 shrink-0 md:text-right pt-0.5 mb-2 md:mb-0">
+                <span className="text-sm font-medium text-muted-foreground">
+                  {exp.period.split("–")[0].trim()} – <br className="hidden md:block" /> {exp.period.split("–")[1]?.trim()}
+                </span>
               </div>
 
               {/* Content Card */}
-              <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] ml-auto md:ml-0 p-6 bg-card border border-border/50 rounded-xl hover:border-primary/50 transition-colors relative">
+              <div className="flex-1 bg-card border border-border/50 rounded-2xl p-6 md:p-8 hover:shadow-sm transition-shadow">
                 
-                {/* Arrow */}
-                <div className="absolute top-5 -left-3 md:group-odd:-left-3 md:group-even:-right-3 md:group-even:left-auto w-3 h-3 bg-card border-t border-l border-border/50 rotate-45 md:group-even:rotate-[135deg] md:group-even:border-l-0 md:group-even:border-b" />
-
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                  <h3 className="text-xl font-bold text-foreground flex items-center gap-2">
-                    {exp.role}
-                  </h3>
-                  <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded">
-                    {exp.period}
-                  </span>
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground">
+                      {exp.company}
+                    </h3>
+                    <div className="text-base font-medium text-primary mt-1">
+                      {exp.role}
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="flex flex-col gap-1 mb-4 text-sm text-muted-foreground font-mono">
-                  <div className="flex items-center gap-1.5">
+                <div className="flex flex-wrap gap-4 mb-6 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1.5 bg-muted/50 px-2.5 py-1 rounded-md">
                     <Building2 className="w-3.5 h-3.5" />
-                    <span className="text-foreground font-medium">{exp.company}</span>
-                    <span className="opacity-50 mx-1">•</span>
                     <span>{exp.type}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-1.5 bg-muted/50 px-2.5 py-1 rounded-md">
                     <MapPin className="w-3.5 h-3.5" />
                     <span>{exp.location}</span>
                   </div>
@@ -98,8 +100,8 @@ export function Experience() {
                 
                 <ul className="space-y-3">
                   {exp.highlights.map((highlight, idx) => (
-                    <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
-                      <span className="text-primary mt-1.5 shrink-0 block w-1 h-1 rounded-full bg-primary" />
+                    <li key={idx} className="text-sm text-muted-foreground flex items-start gap-3">
+                      <span className="text-primary mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full bg-primary/40" />
                       <span className="leading-relaxed">{highlight}</span>
                     </li>
                   ))}

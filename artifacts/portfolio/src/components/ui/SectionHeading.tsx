@@ -10,19 +10,16 @@ interface SectionHeadingProps {
 
 export function SectionHeading({ title, subtitle, align = 'left', children }: SectionHeadingProps) {
   return (
-    <div className={`mb-12 md:mb-20 flex flex-col ${align === 'center' ? 'items-center text-center' : 'items-start'}`}>
+    <div className={`mb-16 flex flex-col ${align === 'center' ? 'items-center text-center' : 'items-start'}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center gap-4"
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        {align === 'left' && <div className="h-px w-12 bg-primary/50" />}
-        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
           {title}
         </h2>
-        {align === 'center' && <div className="h-px w-12 bg-primary/50 hidden md:block" />}
       </motion.div>
       
       {subtitle && (
@@ -30,8 +27,8 @@ export function SectionHeading({ title, subtitle, align = 'left', children }: Se
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mt-4 text-muted-foreground font-mono text-sm md:text-base max-w-2xl"
+          transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+          className={`mt-4 text-muted-foreground text-lg max-w-2xl ${align === 'center' ? 'mx-auto' : ''}`}
         >
           {subtitle}
         </motion.p>
