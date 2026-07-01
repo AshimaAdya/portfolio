@@ -15,6 +15,7 @@ import { Experience } from '@/components/sections/Experience';
 import { TechStack } from '@/components/sections/TechStack';
 import { Education } from '@/components/sections/Education';
 import { Contact } from '@/components/sections/Contact';
+import { ChatBot } from '@/components/ui/ChatBot';
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ function Portfolio() {
         <Education />
         <Contact />
       </main>
+      <ChatBot />
     </div>
   );
 }
