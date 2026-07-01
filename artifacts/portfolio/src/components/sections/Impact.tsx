@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { AnimatedCounter } from '../ui/AnimatedCounter';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Activity, Zap, Server, Shield, Network } from 'lucide-react';
+import { Activity, Server, Shield, Network } from 'lucide-react';
 
 const metrics = [
   {
@@ -24,13 +24,6 @@ const metrics = [
     suffix: '×',
     label: "Expansion in service offerings",
     description: "Powered by a robust iPaaS integration framework."
-  },
-  {
-    icon: <Zap className="w-5 h-5" />,
-    value: 3,
-    suffix: '×',
-    label: "Throughput improvement",
-    description: "Through decoupled async pipeline decomposition."
   },
   {
     icon: <Activity className="w-5 h-5" />,
