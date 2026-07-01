@@ -31,7 +31,7 @@ const experiences = [
   },
   {
     company: "ITC Infotech",
-    role: "Associate IT Consultant",
+    role: "Software Engineer",
     period: "August 2015 – August 2017",
     location: "Bengaluru, India",
     type: "Enterprise IT Services",

@@ -36,7 +36,7 @@ export function Hero() {
             </h2>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed md:mx-0 mx-auto">
-              10 years building backend systems and data platforms at scale. Now taking on freelance projects,
+              8+ years building backend systems and data platforms at scale. Now taking on freelance projects,
               collaborations, and mentoring — bringing that same engineering rigour to your work.
             </p>
           </motion.div>

@@ -12,6 +12,7 @@ const techCategories = [
     title: "Languages",
     skills: [
       { name: "Java", icon: null },
+      { name: "Scala", icon: null },
       { name: "Python", icon: SiPython }
     ]
   },
@@ -29,7 +30,9 @@ const techCategories = [
     skills: [
       { name: "PostgreSQL", icon: SiPostgresql },
       { name: "MongoDB", icon: SiMongodb },
-      { name: "Cosmos DB", icon: null }
+      { name: "Cosmos DB", icon: null },
+      { name: "Redis", icon: null },
+      { name: "MySQL", icon: null }
     ]
   },
   {
@@ -63,6 +66,8 @@ const techCategories = [
     skills: [
       { name: "REST APIs", icon: null },
       { name: "RabbitMQ", icon: SiRabbitmq },
+      { name: "SQS", icon: null },
+      { name: "ActiveMQ", icon: null },
       { name: "SFTP", icon: null },
       { name: "iPaaS", icon: null }
     ]
