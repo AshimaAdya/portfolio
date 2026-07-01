@@ -10,9 +10,9 @@ export type Post = {
 };
 
 export const posts: Post[] = [
-  // ── Published Articles ────────────────────────────────────────────────────
+  // ── Published Articles (Medium) ───────────────────────────────────────────
   {
-    id: "1",
+    id: "a1",
     type: "article",
     title: "From Book to Build: Retail Data Warehouse Design with Kimball's Dimensional Modeling and Databricks",
     excerpt:
@@ -23,7 +23,7 @@ export const posts: Post[] = [
     readTime: "10 min read",
   },
   {
-    id: "2",
+    id: "a2",
     type: "article",
     title: "Build a Complete Azure Data Pipeline Using ADF, Databricks, Synapse & Power BI",
     excerpt:
@@ -34,7 +34,7 @@ export const posts: Post[] = [
     readTime: "12 min read",
   },
   {
-    id: "3",
+    id: "a3",
     type: "article",
     title: "Flying Adhoc Network (FANET)",
     excerpt:
@@ -46,35 +46,54 @@ export const posts: Post[] = [
   },
 
   // ── LinkedIn Posts ─────────────────────────────────────────────────────────
-  // Add your LinkedIn post URLs below. Replace url: "#" with the real link.
   {
-    id: "4",
+    id: "l1",
     type: "linkedin",
-    title: "The distributed systems lesson that took me three years to learn",
+    title: "Agentic RAG fixed single-shot retrieval. It doesn't touch the cold-start problem.",
     excerpt:
-      "In distributed systems, the thing that kills you is not the failure you planned for — it is the failure you assumed was impossible. We had a scenario bite us in production last quarter. Here is what happened and how we fixed it.",
-    date: "2025-01-10",
-    url: "#",
-    tags: ["Distributed Systems", "Lessons Learned"],
+      "Everyone's calling agentic RAG the new default. Instead of one search-then-answer pass, the agent loops — searches, checks confidence, searches again. That's a real step up. Then I hit the counterargument: RAG was built for a person asking one question. An agent works a task across many steps, and every new session it starts from zero.",
+    date: "2025-04-10",
+    url: "https://www.linkedin.com/posts/ashima-adya_aiengineering-aiagents-rag-activity-7477245529484079104-0iOB",
+    tags: ["AI Engineering", "AI Agents", "RAG", "LangGraph", "Context Engineering"],
   },
   {
-    id: "5",
+    id: "l2",
     type: "linkedin",
-    title: "Moving from Bengaluru to Vancouver as a senior engineer",
+    title: "The 'Agent Harness' — and why it's where the real engineering lives",
     excerpt:
-      "Two years ago I made the jump from a comfortable Senior Engineer role in Bengaluru to starting fresh in Vancouver. Best decision I ever made — and also the scariest. A few things nobody tells you about making that move.",
-    date: "2024-10-03",
-    url: "#",
-    tags: ["Career", "Relocation", "Engineering Life"],
+      "Agent = Model + Harness. The model is the brain. But a brain alone can't actually do anything. The harness is everything around it: the hands (tool calls), the memory (because the model forgets everything between calls), and the reflexes (checks that catch a bad output before a user sees it). Two teams can build on the same model. The one with the better harness wins.",
+    date: "2025-03-31",
+    url: "https://www.linkedin.com/posts/ashima-adya_aiengineering-aiagents-softwareengineering-activity-7474353526484135937-33Yf",
+    tags: ["AI Engineering", "AI Agents", "Software Engineering", "AgentForce"],
   },
   {
-    id: "6",
+    id: "l3",
     type: "linkedin",
-    title: "You do not need Kubernetes until you do",
+    title: "Just earned my dbt Fundamentals certification — and it changed how I think about SQL",
     excerpt:
-      "Most teams adopt Kubernetes before they are ready for it. We scaled to 50k requests per minute without it. Here is the inflection point where it actually made sense for us, and how we knew we had hit it.",
-    date: "2024-07-22",
-    url: "#",
-    tags: ["Kubernetes", "Infrastructure", "Scaling"],
+      "I've been writing SQL for years. Turns out I've been thinking about it too small. CTEs and subqueries only live inside one query — the moment it ends, the pieces are gone. dbt flips that: models become reusable across the whole project, one builds on another with ref(), and macros let you write logic once instead of copy-pasting the same CASE statement into twenty queries.",
+    date: "2025-03-24",
+    url: "https://www.linkedin.com/posts/ashima-adya_dbt-fundamentals-ashima-adya-dbt-labs-activity-7471917738039382016-qBhd",
+    tags: ["dbt", "Data Engineering", "SQL", "Analytics Engineering"],
+  },
+  {
+    id: "l4",
+    type: "linkedin",
+    title: "I built an AI agent that updates READMEs automatically — here's what I learned",
+    excerpt:
+      "Every developer knows this pain: you ship a feature, tell yourself you'll update the README later, and then never do. This weekend I built an AI agent to solve that. The hard part wasn't prompt engineering — it was clearly defining what changes should trigger an update, what a good update looks like, and when human approval is required. The better the specification, the better the agent performed.",
+    date: "2025-03-17",
+    url: "https://www.linkedin.com/posts/ashima-adya_aiengineering-softwareengineering-buildinpublic-activity-7469632841128165378-w0TJ",
+    tags: ["AI Engineering", "Software Engineering", "Build In Public"],
+  },
+  {
+    id: "l5",
+    type: "linkedin",
+    title: "I thought the hard part of building an AI app would be the AI. It wasn't.",
+    excerpt:
+      "I built Nexus Reach — an AI-powered cold email generator that matched candidate portfolios to job openings and drafted personalized outreach emails. Had a working demo in a few hours. Then I looked at it the way I look at every data pipeline I ship professionally. The gaps showed up immediately: no input validation, no retries, no quality gates. The AI part took hours. The engineering around it took most of the time.",
+    date: "2025-03-07",
+    url: "https://www.linkedin.com/posts/ashima-adya_dataengineering-softwareengineering-aiengineering-activity-7466641722350112768-OIpx",
+    tags: ["Data Engineering", "Software Engineering", "AI Engineering", "Build In Public"],
   },
 ];

@@ -1,0 +1,62 @@
+I thought the hard part of building an AI app would be the AI.
+It wasn't.
+It was everything around it.
+
+I built an AI-powered tool Nexus Reach (cold email generator) for a staffing agency. The app matched candidate portfolios to relevant job openings and drafted personalized outreach emails to hiring companies.
+
+Had a working demo in a few hours.
+Then I looked at it the way I look at every data pipeline I ship professionally.
+The gaps showed up immediately.
+
+Here's what was missing:
+
+① INPUT VALIDATION
+No sanitization. No length limits. No edge-case handling.
+The first real user would have broken it instantly.
+
+② RETRY MECHANISM
+One failed API call = total failure.
+Production systems are designed around failure. This one wasn't.
+
+③ EVAL + RETRY LOOP
+This is the one most AI tutorials never talk about.
+
+The app was generating emails and shipping them with zero quality checks.
+
+So I built an EmailEvaluator that scores every output before it reaches the user:
+
+→ Word count — 80–200 words scores 1.0, anything outside scores 0
+→ CTA present — regex check for "schedule", "call", "15 minutes"
+→ Tone — blocklist of salesy phrases, each one docks 0.15
+→ Relevance — how many of the job's required skills actually appear in the email
+→ Link presence — at least one portfolio link included in the email
+
+Score below 0.7? Auto-retry. The user never sees a bad draft.
+
+This is exactly how I think about data pipelines at work — quality gates, validation layers, and retries aren't optional. They're the job.
+
+Turns out AI apps need the same rigour.
+
+④ UX GAPS
+Error states weren't handled. Users would've seen blank screens instead of useful messages.
+
+⑤ SECURITY & HYGIENE
+Exposed configs. No secrets management. Missing .gitignore.
+Easy to miss when you're moving fast. Dangerous when you're not.
+
+None of this is AI-specific.
+It's just what production software needs.
+
+The AI part took a few hours.
+The engineering around it took the most time.
+
+That ratio isn't going to change — and honestly, I think that's a good thing.
+
+It means strong engineers will always matter, no matter how good the AI gets.
+
+Repo in comments 👇
+
+What's the biggest gap you've hit going from tutorial to production? Drop it below — I'd love to hear how you solved it.
+
+hashtag#DataEngineering hashtag#SoftwareEngineering hashtag#AIEngineering hashtag#BuildInPublic hashtag#LearningInPublic
+Activate to view larger image,
