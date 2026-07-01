@@ -8,7 +8,9 @@ import { ThemeProvider } from '@/lib/theme';
 
 import { Navbar } from '@/components/layout/Navbar';
 import { Hero } from '@/components/sections/Hero';
+import { Services } from '@/components/sections/Services';
 import { Impact } from '@/components/sections/Impact';
+import { Projects } from '@/components/sections/Projects';
 import { Experience } from '@/components/sections/Experience';
 import { TechStack } from '@/components/sections/TechStack';
 import { Education } from '@/components/sections/Education';
@@ -22,7 +24,9 @@ function Portfolio() {
       <Navbar />
       <main>
         <Hero />
+        <Services />
         <Impact />
+        <Projects />
         <Experience />
         <TechStack />
         <Education />

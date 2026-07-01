@@ -6,10 +6,10 @@ import { useTheme } from '@/lib/theme';
 
 const navItems = [
   { id: 'hero', label: 'Home' },
-  { id: 'impact', label: 'Impact' },
+  { id: 'services', label: 'Services' },
+  { id: 'projects', label: 'Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'tech', label: 'Stack' },
-  { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
 ];
 
