@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
 import { SectionHeading } from '../ui/SectionHeading';
-import { 
-  SiPython, SiSpringboot, SiApachekafka, 
+import {
+  SiPython, SiSpringboot, SiApachekafka,
   SiPostgresql, SiMongodb,
-  SiDocker, SiKubernetes, SiPrometheus, 
-  SiGrafana, SiDbt, SiRabbitmq
+  SiDocker, SiKubernetes, SiPrometheus,
+  SiGrafana, SiDbt
 } from 'react-icons/si';
 
 const techCategories = [
@@ -65,7 +65,7 @@ const techCategories = [
     title: "Integration",
     skills: [
       { name: "REST APIs", icon: null },
-      { name: "RabbitMQ", icon: SiRabbitmq },
+      { name: "RabbitMQ", icon: null },
       { name: "SQS", icon: null },
       { name: "ActiveMQ", icon: null },
       { name: "SFTP", icon: null },
