@@ -4,7 +4,7 @@ import {
   SiPython, SiSpringboot, SiApachekafka,
   SiPostgresql, SiMongodb,
   SiDocker, SiKubernetes, SiPrometheus,
-  SiGrafana, SiDbt
+  SiGrafana, SiRabbitmq
 } from 'react-icons/si';
 
 const techCategories = [
@@ -56,7 +56,7 @@ const techCategories = [
   {
     title: "Data Engineering",
     skills: [
-      { name: "DBT", icon: SiDbt },
+      { name: "DBT", icon: null },
       { name: "Batch ETL", icon: null },
       { name: "Real-time streaming", icon: null }
     ]
@@ -65,7 +65,7 @@ const techCategories = [
     title: "Integration",
     skills: [
       { name: "REST APIs", icon: null },
-      { name: "RabbitMQ", icon: null },
+      { name: "RabbitMQ", icon: SiRabbitmq },
       { name: "SQS", icon: null },
       { name: "ActiveMQ", icon: null },
       { name: "SFTP", icon: null },
